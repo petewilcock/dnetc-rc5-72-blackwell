@@ -27,7 +27,30 @@ sSMtoCores CUDACoresPerSM[] =
   { 0x20, 32 }, // Fermi Generation (SM 2.0) GF100 class
   { 0x21, 48 }, // Fermi Generation (SM 2.1) GF10x class
   { 0x30, 192}, // Kepler Generation (SM 3.0) GK10x class
+  { 0x32, 192}, // Kepler Generation (SM 3.2)
   { 0x35, 192}, // Kepler Generation (SM 3.5) GK11x class
+  { 0x37, 192}, // Kepler Generation (SM 3.7)
+  { 0x50, 128}, // Maxwell Generation (SM 5.0)
+  { 0x52, 128}, // Maxwell Generation (SM 5.2)
+  { 0x53, 128}, // Maxwell Generation (SM 5.3)
+  { 0x60,  64}, // Pascal Generation (SM 6.0)
+  { 0x61, 128}, // Pascal Generation (SM 6.1)
+  { 0x62, 128}, // Pascal Generation (SM 6.2)
+  { 0x70,  64}, // Volta Generation (SM 7.0)
+  { 0x72,  64}, // Volta Generation (SM 7.2)
+  { 0x75,  64}, // Turing Generation (SM 7.5)
+  { 0x80,  64}, // Ampere Generation (SM 8.0)
+  { 0x86, 128}, // Ampere Generation (SM 8.6)
+  { 0x87, 128}, // Ampere Generation (SM 8.7)
+  { 0x89, 128}, // Ada Generation (SM 8.9)
+  { 0x90, 128}, // Hopper Generation (SM 9.0)
+  { 0xa0, 128}, // Blackwell Generation (SM 10.0)
+  { 0xa1, 128}, // Blackwell Generation (SM 10.1)
+  { 0xa3, 128}, // Blackwell Generation (SM 10.3)
+  { 0xa7, 128}, // Rubin Generation (SM 10.7)
+  { 0xb0, 128}, // Blackwell Generation (SM 11.0)
+  { 0xc0, 128}, // Blackwell Generation (SM 12.0) RTX 50 series
+  { 0xc1, 128}, // Blackwell Generation (SM 12.1)
   {   -1, -1 }
 };
 
