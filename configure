@@ -38,6 +38,8 @@ fi
 
 # -------------------------------------------------------------------
 
+: "${SHELL:=/bin/sh}" # used to run commands below; unset under e.g. docker run
+
 #
 # Binary's name.
 #
@@ -980,6 +982,8 @@ gcc_get_ver() {
           elif [ "$ver_word" = "gcc" -o "$ver_word" = "cc" ]; then
             lastwas="ignoreme"
           elif [ "$ver_word" = "specific" ]; then # --enable-version-specific-runtime-libs
+            lastwas="ignoreme"
+          elif [ "$ver_word" = "only" ]; then # --with-gcc-major-version-only
             lastwas="ignoreme"
           else
             ver_num="$ver_word"
