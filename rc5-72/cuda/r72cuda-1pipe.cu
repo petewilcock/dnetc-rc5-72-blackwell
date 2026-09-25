@@ -74,7 +74,13 @@ s32 CDECL rc5_72_unit_func_cuda_1_64_s1(RC5_72UnitWork *rc5_72unitwork, u32 *ite
 static s32 CDECL rc5_72_run_cuda_1(RC5_72UnitWork *rc5_72unitwork, u32 *iterations, int device, u32 num_threads, int waitmode)
 {
   const u32 pipeline_count = 1;
+#if (CUDA_VERSION >= 9000)
+  /* CUDA 9.0+ only targets CC 3.0+, where gridDim.x may exceed 65535;
+     bigger grids spread the fixed per-launch cost over more keys */
+  const u32 max_grid_dim = 262140;
+#else
   const u32 max_grid_dim = 65535;
+#endif
   const u32 optimal_process_amount = num_threads * max_grid_dim * pipeline_count; // optimal GPU utilization during a single GPU core invocation
 
   int currentdevice;
